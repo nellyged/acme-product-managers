@@ -1,0 +1,43 @@
+{
+  "name": "acme-product-managers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:server": "DATABASE_URL=postgres://localhost/acme-product-managers nodemon ./server.js",
+    "postinstall": "./node_modules/webpack/bin/webpack.js",
+    "webpack": "webpack",
+    "webpack:dev": "npm run webpack -- --mode=development --watch",
+    "start:dev": "npm run webpack:dev & DATABASE_URL=postgres://localhost/acme-product-managers nodemon ./server.js --ignore client/ --ignore public/"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "stage-2"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.10",
+    "path": "^0.12.7",
+    "pg": "^7.9.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^5.0.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "sequelize": "^5.2.12",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}
